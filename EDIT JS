@@ -1,0 +1,145 @@
+$(document).ready(function() {
+
+var _title = '<title>Ogario-TVN</title>';
+$('title').replaceWith(_title);
+//CSS - TVN
+   $('head').append('<style>.btn-needs-server,.btn-logout{width:100%}#helloContainer[data-logged-in="0"] .btn-spectate{width:100%}#helloContainer[data-logged-in="1"] .btn-spectate{width:100%}i{border-radius:50%!important;}.input-group-addon{background:transparent!important;}.menu-tabs{letter-spacing:0!important;padding:5px 2%!important}</style>');
+   $(".agario-profile-picture").css("border-radius","50%");
+   $(".agario-wallet-container").css("border-radius","0px");
+   $("#profiles").css("opacity", "10", "background-color","transparent");
+   $(".agario-wallet-plus").css("border-radius","0px");
+   $(".toast.toast-warning").css("border-radius","0px");
+   
+//EMPTY - TVN
+    $("#version-tag").empty();
+//Remove - TVN
+    $(".agario-panel.ogario-yt-panel").remove();
+    $("#version").remove();
+    $("#quality.form-control").remove();
+    $("#stream-mode").remove();
+
+
+//ADD - TVN
+        $('#og-settings').prepend('<button type="button" class="btn btn-info btn-md" style="width:100%;border-radius: 0px;" data-toggle="modal" data-target="#extra">Extra Settings</button><div class="modal fade" id="extra" role="dialog"><div class="modal-dialog modal-md"><div class="modal-content" style="background-color:#222"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">Extra Settings: </h4></div><div class="modal-body"><p><input class="form-control" disabled="" value="Private Mode" style="background-color:#373737;margin-top:5px!important;color:white;height:35px;width:30%;border-radius:4px;outline:none!important;outline-style:none!important;box-shadow:none!important;float:left;margin-right:5px"><input id="opt_private_mode" style="display:inline-block!important;width:35px!important;height:35px!important;margin:5px 4px 0 0!important;vertical-align:middle!important;background:url(check_radio_sheet.png) left top no-repeat;cursor:pointer!important;" type="checkbox"><input class="form-control" disabled="" value="Hide Version Info" style="background-color:#373737;margin-top:5px!important;color:white;height:35px;width:30%;border-radius:4px;outline:none!important;outline-style:none!important;box-shadow:none!important;float:right;margin-right:5px"><input id="opt_version_info" style="display:inline-block!important;width:35px!important;height:35px!important;margin:5px 4px 0 0!important;vertical-align:middle!important;background:url(check_radio_sheet.png) left top no-repeat;cursor:pointer!important;float:right" type="checkbox"></p><p><p><input class="form-control" disabled="" value="Hide Extension Title" style="background-color:#373737;margin-top:5px!important;color:white;height:35px;width:30%;border-radius:4px;outline:none!important;outline-style:none!important;box-shadow:none!important;float:left;margin-right:5px"><input id="opt_ext_title" style="display:inline-block!important;width:35px!important;height:35px!important;margin:5px 4px 0 0!important;vertical-align:middle!important;background:url(check_radio_sheet.png) left top no-repeat;cursor:pointer!important;" type="checkbox"><input class="form-control" disabled="" value="Lighter Minimap" style="background-color:#373737;margin-top:5px!important;color:white;height:35px;width:30%;border-radius:4px;outline:none!important;outline-style:none!important;box-shadow:none!important;float:right;margin-right:5px"><input id="opt_light_minimap" style="display:inline-block!important;width:35px!important;height:35px!important;margin:5px 4px 0 0!important;vertical-align:middle!important;background:url(check_radio_sheet.png) left top no-repeat;cursor:pointer!important;float:right" type="checkbox"></p><p><input class="form-control" disabled="" value="Square Blobs" style="background-color:#373737;margin-top:5px!important;color:white;height:35px;width:30%;border-radius:4px;outline:none!important;outline-style:none!important;box-shadow:none!important;float:left;margin-right:5px"><input id="opt_squares" style="display:inline-block!important;width:35px!important;height:35px!important;margin:5px 4px 0 0!important;vertical-align:middle!important;background:url(check_radio_sheet.png) left top no-repeat;cursor:pointer!important;" type="checkbox"><input class="form-control" disabled="" value="Cursor 1" style="background-color:#373737;margin-top:5px!important;color:white;height:35px;width:30%;border-radius:4px;outline:none!important;outline-style:none!important;box-shadow:none!important;float:right;margin-right:5px"><input id="opt_cursor1" style="display:inline-block!important;width:35px!important;height:35px!important;margin:5px 4px 0 0!important;vertical-align:middle!important;background:url(check_radio_sheet.png) left top no-repeat;cursor:pointer!important;float:right" type="checkbox"></p><p><input class="form-control" disabled="" value="Transparent Menu" style="background-color:#373737;margin-top:5px!important;color:white;height:35px;width:30%;border-radius:4px;outline:none!important;outline-style:none!important;box-shadow:none!important;float:left;margin-right:5px"><input id="opt_transparent_menu" style="display:inline-block!important;width:35px!important;height:35px!important;margin:5px 4px 0 0!important;vertical-align:middle!important;background:url(check_radio_sheet.png) left top no-repeat;cursor:pointer!important;" type="checkbox"><input class="form-control" disabled="" value="Hide Logout Button" style="background-color:#373737;margin-top:5px!important;color:white;height:35px;width:30%;border-radius:4px;outline:none!important;outline-style:none!important;box-shadow:none!important;float:right;margin-right:5px"><input id="opt_hide_logout" style="display:inline-block!important;width:35px!important;height:35px!important;margin:5px 4px 0 0!important;vertical-align:middle!important;background:url(check_radio_sheet.png) left top no-repeat;cursor:pointer!important;float:right" type="checkbox"></p><br><p><input class="form-control" disabled="" value="ZT theme" style="background-color:#373737;margin-top:5px!important;color:white;height:35px;width:30%;border-radius:4px;outline:none!important;outline-style:none!important;box-shadow:none!important;float:left;margin-right:5px"><input id="opt_zt_theme" style="display:inline-block!important;width:35px!important;height:35px!important;margin:5px 4px 0 0!important;vertical-align:middle!important;background:url(check_radio_sheet.png) left top no-repeat;cursor:pointer!important;" type="checkbox"><input class="form-control" disabled="" value="ACE Theme" style="background-color:#373737;margin-top:5px!important;color:white;height:35px;width:30%;border-radius:4px;outline:none!important;outline-style:none!important;box-shadow:none!important;float:right;margin-right:5px"><input id="opt_ace_theme" style="display:inline-block!important;width:35px!important;height:35px!important;margin:5px 4px 0 0!important;vertical-align:middle!important;background:url(check_radio_sheet.png) left top no-repeat;cursor:pointer!important;float:right" type="checkbox"></p></div><div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color:#e74c3c">Close</button></div></div></div></div></div>');
+    $("#main-menu").prepend("<div id='infoKdiv' style='background-color: transparent;width: 350px;margin-left: 0px;border-bottom: 3px solid #428bca;font-size: 18px;padding: 5px;font-weight: 500;color: #428bca;margin-top: 1px;margin-bottom: 2px;' align='center'>销毁� EXTENSION</div>");
+  
+//CHECKBOXES SETTINGS :
+$("#opt_private_mode").on( 'change', function() {
+    if( $(this).is(':checked') ) {
+        $("head").append('<link rel="stylesheet" href="http://xagar-scriptx.tk/nel99/stream_mode.css">');
+  localStorage.setItem("opt_private_mode","true");
+    } else {
+        $("link[href=\"http://xagar-scriptx.tk/nel99/stream_mode.css\"]").remove();
+  localStorage.setItem("opt_private_mode","false");
+    }
+});
+
+$("#opt_version_info").change(function(){
+                    if($(this).is(":checked")){
+                         $("#menu-footer-v").hide();
+                        localStorage.setItem("opt_prenext_profile",true);
+                    } else {
+                        $("#menu-footer-v").show();
+                        localStorage.setItem("opt_prenext_profile",false);
+                    }
+                });
+
+$("#opt_ext_title").change(function(){
+                    if($(this).is(":checked")){
+                        $("#infoKdiv").hide();
+                        localStorage.setItem("opt_ext_title",true);
+                    } else {
+                        $("#infoKdiv").show();
+                        localStorage.setItem("opt_ext_title",false);
+                    }
+                });
+$("#opt_light_minimap").change(function(){
+                    if($(this).is(":checked")){
+                         $("#minimap-sectors").css("opacity","0.4");
+                        localStorage.setItem("opt_light_minimap",true);
+                    } else {
+                        $("#minimap-sectors").css("opacity","0.12");
+                        localStorage.setItem("opt_light_minimap",false);
+                    }
+                });
+$("#opt_squares").on( 'change', function() {
+    if( $(this).is(':checked') ) {
+                  alert('Square mode changed all the blobs to square, if you want to remove this, just refresh the page !');
+           CanvasRenderingContext2D.prototype._arc = CanvasRenderingContext2D.prototype.arc;
+           CanvasRenderingContext2D.prototype.arc = function() {
+               cell = {x: arguments[0], y: arguments[1], size: arguments[2]};
+                    this.rect(cell.x - cell.size, cell.y - cell.size, cell.size * 2, cell.size * 2);
+           };
+    };
+});
+$("#opt_cursor1").on( 'change', function() {
+    if( $(this).is(':checked') ) {
+        $("head").append('<link rel="stylesheet" href="http://xagar-scriptx.tk/nel99/cursor.css">');
+  localStorage.setItem("opt_cursor1","true");
+    } else {
+        $("link[href=\"http://xagar-scriptx.tk/nel99/cursor.css\"]").remove();
+  localStorage.setItem("opt_cursor1","false");
+    }
+});
+
+
+$("#opt_transparent_menu").on( 'change', function() {
+    if( $(this).is(':checked') ) {
+        $("head").append('<link rel="stylesheet" href="http://xagar-scriptx.tk/nel99/dimmer_menu.css">');
+  localStorage.setItem("opt_transparent_menu","true");
+    } else {
+        $("link[href=\"http://xagar-scriptx.tk/nel99/dimmer_menu.css\"]").remove();
+  localStorage.setItem("opt_transparent_menu","false");
+    }
+});
+
+
+$("#opt_hide_logout").change(function(){
+                    if($(this).is(":checked")){
+                        $(".btn-logout").hide();
+                        localStorage.setItem("opt_hide_logout",true);
+                    } else {
+                        $(".btn-logout").show();
+                        localStorage.setItem("opt_hide_logout",false);
+                    }
+                });
+
+$("#opt_zt_theme").on( 'change', function() {
+    if( $(this).is(':checked') ) {
+        $("head").append('<link rel="stylesheet" href="http://xagar-scriptx.tk/nel99/zt_theme.css">');
+  localStorage.setItem("opt_zt_theme","true");
+    } else {
+        $("link[href=\"http://xagar-scriptx.tk/nel99/zt_theme.css\"]").remove();
+  localStorage.setItem("opt_zt_theme","false");
+    }
+});
+
+$("#opt_ace_theme").on( 'change', function() {
+    if( $(this).is(':checked') ) {
+        $("head").append('<link rel="stylesheet" href="http://xagar-scriptx.tk/nel99/night_theme.css">');
+  localStorage.setItem("opt_ace_theme","true");
+    } else {
+        $("link[href=\"http://xagar-scriptx.tk/nel99/night_theme.css\"]").remove();
+  localStorage.setItem("opt_ace_theme","false");
+    }
+});
+
+
+//REPLACEMENT - TVN
+    $('#minimap-sectors').replaceWith('<img id="minimap-sectors" src="http://i.imgur.com/2SoAFSX.png" style="display:block!important; opacity:0.12" width="182px" height="220px">');
+        var f = localStorage.getItem('activeprofile');
+    var data = JSON.parse(localStorage["profile" + f]);
+
+var skValue2 = window.localStorage.getItem('textSkinsOp');
+
+    for (var i = 1; i < 11; i++) {
+        var skinz = JSON.parse(localStorage["profile" + i]);
+        if (skinz !== null) {
+            $('.' + i).css("background", "url('" + skinz[2] + "')");
+
+
+
+
+        }
+    }
+});
